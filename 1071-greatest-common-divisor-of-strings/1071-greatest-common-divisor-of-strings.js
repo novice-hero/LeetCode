@@ -28,12 +28,14 @@ var gcdOfStrings = function(str1, str2) {
   result.sort().forEach(v => {
     let tempMinS = minS;
     let tempMaxS = maxS;
-    while (tempMinS.includes(v)) {
-      tempMinS = tempMinS.replace(v, "");
-    }
-    while (tempMaxS.includes(v)) {
-      tempMaxS = tempMaxS.replace(v, "");
-    }
+    tempMinS = tempMinS.replaceAll(v, "");
+    tempMaxS = tempMaxS.replaceAll(v, "");
+    // while (tempMinS.includes(v)) {
+    //   tempMinS = tempMinS.replace(v, "");
+    // }
+    // while (tempMaxS.includes(v)) {
+    //   tempMaxS = tempMaxS.replace(v, "");
+    // }
     if (tempMaxS === '' && tempMinS === '') answer.push(v);
   });
 
