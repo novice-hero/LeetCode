@@ -12,7 +12,7 @@ var maxAreaOfIsland = function(grid) {
     let cnt = 1;
     
     while (q.length) {
-      const [r, c] = q.shift();
+      const [r, c] = q.pop();
       for (const move of moves) {
         const nr = r + move[0];
         const nc = c + move[1];
