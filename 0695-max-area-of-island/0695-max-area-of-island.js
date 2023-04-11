@@ -31,7 +31,6 @@ var maxAreaOfIsland = function(grid) {
       if (grid[i][j]===1 && !visited[i][j]) answer.push(bfs(i, j));
     }
   } 
-  
-  console.log(answer)
+
   return answer.length ? Math.max(...answer) : 0;
 };
