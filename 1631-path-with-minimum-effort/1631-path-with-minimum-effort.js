@@ -1,6 +1,6 @@
 function minimumEffortPath(heights) {
-  const m = heights.length;
-  const n = heights[0].length;
+  const HEIGHTS = heights.length;
+  const WIDTH = heights[0].length;
   const moves = [[0, 1], [1, 0], [0, -1], [-1, 0]];
 
   function bfs(maxEffort) {
@@ -11,13 +11,13 @@ function minimumEffortPath(heights) {
     while (q.length > 0) {
       const [row, col] = q.pop();
 
-      if (row === m - 1 && col === n - 1) return true;
+      if (row === HEIGHTS - 1 && col === WIDTH - 1) return true;
 
       for (const [dx, dy] of moves) { // check neighbors
         const nr = row + dx;
         const nc = col + dy;
 
-        if (nr >= 0 && nr < m && nc >= 0 && nc < n) { // check boundaries
+        if (nr >= 0 && nr < HEIGHTS && nc >= 0 && nc < WIDTH) { // check boundaries
           const key = `${nr},${nc}`;
           if (!visited.has(key)) {
             const newEffort = Math.abs(heights[nr][nc] - heights[row][col]);
