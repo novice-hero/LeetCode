@@ -3,12 +3,10 @@
  * @return {number[][]}
  */
 var generate = function(numRows) {
-  if (numRows === 1) return [[1]];
-  if (numRows === 2) return [[1],[1,1]];
   
-  const answer = [[1],[1,1]];
+  const answer = [];
   
-  for (let i=2; i<numRows; i++) {
+  for (let i=0; i<numRows; i++) {
     const temp = [];
     for (let j=0; j<=i; j++) {
       if (j === 0 || j === i) temp.push(1);
