@@ -11,10 +11,9 @@ var generate = function(numRows) {
   for (let i=2; i<numRows; i++) {
     let j = 0;
     const temp = [];
-    while (j <= i) {
+    for (let j=0; j<=i; j++) {
       if (j === 0 || j === i) temp.push(1);
       else temp.push(answer[i-1][j-1] + answer[i-1][j]);
-      j++;
     }
     answer.push(temp);
   }
