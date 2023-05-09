@@ -9,7 +9,6 @@ var generate = function(numRows) {
   const answer = [[1],[1,1]];
   
   for (let i=2; i<numRows; i++) {
-    let j = 0;
     const temp = [];
     for (let j=0; j<=i; j++) {
       if (j === 0 || j === i) temp.push(1);
